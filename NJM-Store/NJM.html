@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJM | Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="NJM.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">NJM Store</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Produtos</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="tech-circle">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="list">
+
+            <div class="item active">
+                <div class="product-img">
+                    <img src="img/AirPods Pro.png" alt="AirPods Pro">
+                </div>
+
+                <div class="content">
+                    <p class="product-tag">Novo Lançamento</p>
+                    <p class="product-name">AirPods Pro 2</p>
+                    <p class="description">Os AirPods Pro 2 trazem áudio imersivo com cancelamento ativo de ruído até 2x
+                        mais potente. Com chip H2, som refinado, modo transparência inteligente e controles por toque.
+                        O estojo tem MagSafe, USB-C, localização via Find My e até 30h de bateria.
+                        Perfeitos para quem busca qualidade sonora, conforto e tecnologia de ponta.
+                    </p>
+                    <button class="btn" onclick="window.location.href = 'https://www.apple.com/br/airpods-pro/'">Saiba
+                        Mais</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="product-img">
+                    <img src="img/Power Bank.png" alt="Power Bank">
+                </div>
+
+                <div class="content">
+                    <p class="product-tag">Energia magnética. Estilo Apple.</p>
+                    <p class="product-name">Power Bank</p>
+                    <p class="description">O Power Bank MagSafe da Apple se encaixa perfeitamente no seu iPhone com
+                        fixação magnética segura.
+                        Carregue sem cabos, com praticidade e design minimalista.
+                        Ideal para o dia a dia, com recarga rápida e compatibilidade total com MagSafe.
+                        Leve, compacto e feito sob medida para acompanhar seu ritmo.</p>
+                    <button class="btn" onclick="window.location.href = 'https://www.apple.com/br/powerbank/'">Saiba
+                        Mais</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="product-img">
+                    <img src="img/jbl.png" alt="JBL">
+                </div>
+
+                <div class="content">
+                    <p class="product-tag">Som potente no seu bolso.</p>
+                    <p class="product-name">JBL</p>
+                    <p class="description">A JBL Go 4 entrega graves fortes e som potente em um design super compacto.
+                        Com Bluetooth 5.3 e até 7h de bateria, é ideal pra qualquer rolê.
+                        Resistente à água e poeira (IP67), vai com você pra praia, parque ou pedal.
+                        Leve, prática e com a qualidade sonora que só a JBL garante.</p>
+                    <button class="btn" onclick="window.location.href = 'https://www.jbl.com.br/jbl-go-4/'">Saiba
+                        Mais</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow-btn" id="prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-caret-left-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                </svg>
+            </button>
+            <button class="arrow-btn" id="next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="indicators">
+            <div class="numbers">01</div>
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
