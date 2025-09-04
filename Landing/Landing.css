@@ -1,0 +1,289 @@
+/* Reset e fonte global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fundo e cor padrão */
+body {
+    background: radial-gradient(ellipse at left, #4A0F0F 7%, #1E1E1E 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Header (menu superior) */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    background: transparent;
+    position: relative;
+}
+
+/* Logo do bot */
+.menu-img {
+    height: 76px;
+    width: 76px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Menu de navegação (desktop) */
+.header-menu {
+    display: flex;
+    gap: 48px;
+}
+
+/* Links do menu */
+.header-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.header-menu a:hover {
+    color: #ff4e9b;
+}
+
+/* Botão hambúrguer (escondido no desktop) */
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 16px;
+}
+
+.menu-hamburger img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Conteúdo principal centralizado */
+.content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Banner principal */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 56px 0 32px 0;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.banner-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.banner-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.banner-btn {
+    background-color: #fff;
+    color: #222;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    width: fit-content;
+    margin-top: 8px;
+}
+
+.banner-btn:hover {
+    background: #ff4e9b;
+    color: #fff;
+}
+
+.banner-img {
+    height: 260px;
+    width: 260px;
+}
+
+/* Seção de funcionalidades */
+.features {
+    margin-top: 32px;
+    background: transparent;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+}
+
+.features-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+/* Linha decorativa acima do título */
+.features-title::before {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 2px;
+    background: #444;
+    position: absolute;
+    left: 50%;
+    top: -24px;
+    transform: translateX(-50%);
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    gap: 24px;
+    margin-top: 38px;
+}
+
+strong {
+    color: #ff4e9b;
+}
+
+/* Rodapé */
+.footer {
+    padding: 32px;
+    border-top: 1px solid #444;
+    margin-top: 1px;
+    /* Adicionado para empurrar o footer mais para baixo */
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    background: linear-gradient(#ff4e9b 0%, #ff7e5f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Responsividade e animação */
+@media (max-width: 900px) {
+
+    /* Banner em coluna no mobile */
+    .banner {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        padding: 32px 0 24px 0;
+    }
+
+    .banner-img {
+        margin-left: 0;
+        width: 180px;
+        height: 180px;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 16px 8px 16px;
+    }
+
+    /* Menu hamburguer visível no mobile */
+    .menu-hamburger {
+        display: block;
+    }
+
+    /* Menu animado: abre/fecha suavemente */
+    .header-menu {
+        position: absolute;
+        top: 72px;
+        right: 16px;
+        background: #18191c;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 24px;
+        padding: 32px 24px;
+        border-radius: 0 0 0 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        z-index: 100;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition:
+            max-height 0.4s cubic-bezier(.4, 0, .2, 1),
+            opacity 0.3s,
+            transform 0.3s;
+        display: flex;
+    }
+
+    /* Classe ativada pelo JS para abrir o menu */
+    .header-menu.open {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .menu-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .content {
+        padding: 0 8px;
+    }
+
+    .features-list {
+        font-size: 1rem;
+    }
+
+    .footer-img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .features-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-text {
+        text-align: center;
+        font-size: 55px;
+        font-weight: bold;
+        background: linear-gradient(#ff4e9b 0%, #ff7e5f 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
