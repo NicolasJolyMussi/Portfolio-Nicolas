@@ -18,6 +18,8 @@ html {
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
+
+
 body {
     background-color: var(--escuro);
     color: var(--claro);
@@ -299,4 +301,26 @@ h1 {
     50% {
         transform: translateY(-20%)
     }
+}
+
+/* Alerta de Projeto Indisponível */
+.alerta-projeto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    color: var(--claro);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    z-index: 2000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.alerta-projeto.mostrar {
+    opacity: 1;
+    transform: translateY(0);
 }
