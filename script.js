@@ -18,11 +18,33 @@ function enviarMensagem(event) {
 
 }
 
-// Alerta para links de código indisponíveis
+const menu = document.querySelector('.menu');
+const toggleBtn = document.querySelector('.menu-toggle');
+const overlay = document.querySelector('.menu-overlay');
+
+function fecharMenu() {
+    menu.classList.remove('aberto');
+    overlay.classList.remove('aberto');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+}
+
+if (toggleBtn && menu && overlay) {
+    toggleBtn.addEventListener('click', () => {
+        const aberto = menu.classList.toggle('aberto');
+        overlay.classList.toggle('aberto', aberto);
+        toggleBtn.setAttribute('aria-expanded', aberto);
+    });
+
+    overlay.addEventListener('click', fecharMenu);
+
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', fecharMenu);
+    });
+}
+
 document.querySelectorAll('.link-projeto a.codigo').forEach(link => {
     link.addEventListener('click', e => {
-        // se o href estiver vazio -> mostra alerta em vez de abrir link
-        if (!link.getAttribute('href')) {
+        if (!link.getAttribute('href') || link.getAttribute('href') === '#') {
             e.preventDefault();
 
             let alerta = document.createElement('div');
@@ -31,10 +53,8 @@ document.querySelectorAll('.link-projeto a.codigo').forEach(link => {
 
             document.body.appendChild(alerta);
 
-            // animação de entrada
             setTimeout(() => alerta.classList.add('mostrar'), 10);
 
-            // remove após 3s
             setTimeout(() => {
                 alerta.classList.remove('mostrar');
                 setTimeout(() => alerta.remove(), 400);
