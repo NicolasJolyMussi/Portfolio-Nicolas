@@ -380,6 +380,16 @@ h1 {
         z-index: 200;
     }
 
+    .menu-toggle {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.escondido {
+        transform: translateY(-80px);
+        opacity: 0;
+        pointer-events: none;
+    }
+
     .menu-link::after {
         display: none;
     }
@@ -439,12 +449,6 @@ h1 {
         pointer-events: auto;
     }
 
-    .sobre-titulo,
-    .projetos-titulo,
-    .contato-titulo {
-        font-size: 2rem;
-    }
-
     .projetos-caixa {
         grid-template-columns: 1fr;
     }
@@ -465,6 +469,8 @@ h1 {
         margin-right: 0;
     }
 }
+
+/* <- fecha o @media (max-width: 768px) aqui, não antes */
 
 @media (max-width: 400px) {
 

@@ -62,3 +62,19 @@ document.querySelectorAll('.link-projeto a.codigo').forEach(link => {
         }
     });
 });
+
+// Esconde o botão do menu ao rolar para baixo, mostra ao rolar para cima
+let ultimoScroll = 0;
+
+// Só mostra o botão quando estiver perto do topo da página
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+        toggleBtn.classList.add('escondido');
+    } else {
+        toggleBtn.classList.remove('escondido');
+    }
+
+    if (menu.classList.contains('aberto')) {
+        fecharMenu();
+    }
+});
