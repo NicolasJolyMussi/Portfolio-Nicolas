@@ -83,3 +83,53 @@ const formulario = document.getElementById('formulario');
 if (formulario) {
     formulario.addEventListener('submit', enviarMensagem);
 }
+
+const botoesFiltro = document.querySelectorAll('.filtro-botao');
+const cardsProjetos = document.querySelectorAll('.projetos-card');
+
+botoesFiltro.forEach(botao => {
+    botao.addEventListener('click', () => {
+        botoesFiltro.forEach(b => b.classList.remove('ativo'));
+        botao.classList.add('ativo');
+
+        const filtro = botao.dataset.filtro;
+
+        cardsProjetos.forEach(card => {
+            const categoria = card.dataset.categoria;
+            const mostrar = filtro === 'todos' || categoria === filtro;
+            card.classList.toggle('escondido', !mostrar);
+            if (mostrar) card.classList.add('visivel'); // garante que apareça mesmo se o observer não disparou ainda
+        });
+    });
+});
+
+const elementosReveal = document.querySelectorAll('.reveal');
+
+const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada, indice) => {
+        if (entrada.isIntersecting) {
+            setTimeout(() => {
+                entrada.target.classList.add('visivel');
+            }, indice * 80);
+            observador.unobserve(entrada.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+elementosReveal.forEach(elemento => observador.observe(elemento));
+
+const botaoTopo = document.getElementById('botao-topo');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        botaoTopo.classList.add('visivel');
+    } else {
+        botaoTopo.classList.remove('visivel');
+    }
+});
+
+botaoTopo.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});

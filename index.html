@@ -63,7 +63,7 @@
         <img src="img/webp/Eu.webp" alt="Foto de Nícolas Joly Mussi" class="foto-perfil">
         <h1>Nícolas Joly Mussi</h1>
         <p class="cabecalho-sub-titulo">Estudante de Engenharia de Software</p>
-        <a href="#sobre" class="scroll-indicador" arial-label="Rolar para a seção Sobre">
+        <a href="#sobre" class="scroll-indicador" aria-label="Rolar para a seção Sobre">
             <span></span>
         </a>
     </main>
@@ -83,28 +83,28 @@
         <h2 class="stack-titulo">Stack Tecnológica</h2>
         <div class="stack-grade">
     
-            <div class="stack-categoria">
+            <div class="stack-categoria reveal">
                 <h3 class="stack-categoria-titulo">Frontend</h3>
                 <ul class="stack-lista">
                     <li>[ADICIONAR INFORMAÇÃO]</li>
                 </ul>
             </div>
     
-            <div class="stack-categoria">
+            <div class="stack-categoria reveal">
                 <h3 class="stack-categoria-titulo">Backend</h3>
                 <ul class="stack-lista">
                     <li>[ADICIONAR INFORMAÇÃO]</li>
                 </ul>
             </div>
     
-            <div class="stack-categoria">
+            <div class="stack-categoria reveal">
                 <h3 class="stack-categoria-titulo">Banco de Dados</h3>
                 <ul class="stack-lista">
                     <li>[ADICIONAR INFORMAÇÃO]</li>
                 </ul>
             </div>
     
-            <div class="stack-categoria">
+            <div class="stack-categoria reveal">
                 <h3 class="stack-categoria-titulo">Ferramentas</h3>
                 <ul class="stack-lista">
                     <li>[ADICIONAR INFORMAÇÃO]</li>
@@ -116,9 +116,19 @@
 
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo">Meus Projetos</h2>
+
+        <div class="filtro-projetos">
+            <button class="filtro-botao ativo" data-filtro="todos">Todos</button>
+            <button class="filtro-botao" data-filtro="ecommerce">E-commerce</button>
+            <button class="filtro-botao" data-filtro="landing">Landing Page</button>
+            <button class="filtro-botao" data-filtro="fullstack">Full-stack</button>
+            <button class="filtro-botao" data-filtro="api">API</button>
+            <button class="filtro-botao" data-filtro="academico">Acadêmico</button>
+        </div>
+
         <div class="projetos-caixa">
 
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="ecommerce">
                 <img src="img/webp/TelaVolvo.webp" alt="Projeto Volvo" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Loja de Caminhões</h3>
@@ -134,7 +144,7 @@
                 </div>
             </div>
 
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="academico">
                 <img src="img/webp/TelaFomulario.webp" alt="Projeto Formulario" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Formulário</h3>
@@ -149,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="landing">
                 <img src="img/webp/TelaMelkDoces.webp" alt="Projeto MilkDoces" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">MilkDoces</h3>
@@ -164,7 +174,7 @@
                 </div>
             </div>
 
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="ecommerce">
                 <img src="img/webp/TelaNJM.webp" alt="Tela NJM | Store" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Loja de Eletrônicos</h3>
@@ -179,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="landing">
                 <img src="img/webp/TelaGaleria.webp" alt="Tela Galeria" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Galeria de Fotos</h3>
@@ -195,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projetos-card projetos-card--destaque">
+            <div class="projetos-card projetos-card--destaque reveal" data-categoria="api">
                 <span class="badge-destaque">🏆 Destaque</span>
                 <img src="img/webp/tela-tempo.webp" alt="WeatherX App" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
@@ -212,7 +222,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="landing">
                 <img src="img/webp/tela-cafeteria.webp" alt="Cafeteria" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Cafeteria</h3>
@@ -228,7 +238,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projetos-card">
+            <div class="projetos-card reveal" data-categoria="fullstack">
                 <img src="img/webp/Tela-GoalBot.webp" alt="GoalBot" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">GoalBot</h3>
@@ -244,7 +254,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projetos-card projetos-card--destaque">
+            <div class="projetos-card projetos-card--destaque reveal" data-categoria="fullstack">
                 <span class="badge-destaque">🏆 Destaque</span>
                 <img src="img/webp/FGTS.webp" alt="FGTS" class="projetos-imagem">
                 <div class="caixa-textos-projetos">
@@ -282,6 +292,10 @@
     <footer>
         <p class="texto-rodape">&copy; Desenvolvido por Nícolas Joly Mussi</p>
     </footer>
+
+    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao início">
+        ↑
+    </button>
 
     <script src="script.js"></script>
 </body>
