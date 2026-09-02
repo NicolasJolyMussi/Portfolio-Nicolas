@@ -78,3 +78,8 @@ window.addEventListener('scroll', () => {
         fecharMenu();
     }
 });
+
+const formulario = document.getElementById('formulario');
+if (formulario) {
+    formulario.addEventListener('submit', enviarMensagem);
+}
