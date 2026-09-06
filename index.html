@@ -62,6 +62,7 @@
     <main id="inicio" class="cabecalho">
         <img src="img/webp/Eu.webp" alt="Foto de Nícolas Joly Mussi" class="foto-perfil">
         <h1>Nícolas Joly Mussi</h1>
+        <div class="hero-divisor"></div>
         <p class="cabecalho-sub-titulo">Estudante de Engenharia de Software</p>
         <a href="#sobre" class="scroll-indicador" aria-label="Rolar para a seção Sobre">
             <span></span>
@@ -70,45 +71,61 @@
 
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo">Sobre Mim</h2>
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">Olá! Meu nome é Nícolas e estou cursando o segundo período de Engenharia de
+        <div class="sobre-caixa sobre-caixa--dividida">
+            <p class="sobre-paragrafo sobre-paragrafo--texto">
+                Olá! Meu nome é Nícolas e estou cursando o segundo período de Engenharia de
                 Software. Estou dando os
                 primeiros passos na área, descobrindo aos poucos como a tecnologia pode transformar ideias em soluções.
                 Gosto de aprender fazendo, errando, acertando e, acima de tudo, evoluindo um pouco mais a cada
-                experiência.</p>
+                experiência.
+            </p>
+            <div class="sobre-destaques">
+                <div class="sobre-destaque">
+                    <span class="sobre-destaque-numero">9</span>
+                    <span class="sobre-destaque-rotulo">Projetos</span>
+                </div>
+                <div class="sobre-destaque sobre-destaque--roxo">
+                    <span class="sobre-destaque-numero">HTML/CSS/JS</span>
+                    <span class="sobre-destaque-rotulo">Foco atual</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="stack" class="stack">
         <h2 class="stack-titulo">Stack Tecnológica</h2>
-        <div class="stack-grade">
+        <div class="stack-lista-categorias">
     
-            <div class="stack-categoria reveal">
-                <h3 class="stack-categoria-titulo">Frontend</h3>
-                <ul class="stack-lista">
-                    <li>[ADICIONAR INFORMAÇÃO]</li>
-                </ul>
+            <div class="stack-linha">
+                <div class="stack-barra stack-barra--indigo"></div>
+                <span class="stack-rotulo">Frontend</span>
+                <div class="stack-pills">
+                    <span class="stack-pill stack-pill--indigo">HTML5 · CSS3 · JavaScript · Responsividade · Acessibilidade · Git</span>
+                </div>
             </div>
     
-            <div class="stack-categoria reveal">
-                <h3 class="stack-categoria-titulo">Backend</h3>
-                <ul class="stack-lista">
-                    <li>[ADICIONAR INFORMAÇÃO]</li>
-                </ul>
+            <div class="stack-linha">
+                <div class="stack-barra stack-barra--roxo"></div>
+                <span class="stack-rotulo">Backend</span>
+                <div class="stack-pills">
+                    <span class="stack-pill stack-pill--roxo">Node.js · Express · TypeScript · APIs REST · JWT · Arquitetura de APIs</span>
+                </div>
             </div>
     
-            <div class="stack-categoria reveal">
-                <h3 class="stack-categoria-titulo">Banco de Dados</h3>
-                <ul class="stack-lista">
-                    <li>[ADICIONAR INFORMAÇÃO]</li>
-                </ul>
+            <div class="stack-linha">
+                <div class="stack-barra stack-barra--indigo"></div>
+                <span class="stack-rotulo">Banco de Dados</span>
+                <div class="stack-pills">
+                    <span class="stack-pill stack-pill--indigo">PostgreSQL · MySQL · SQL · Modelagem de Dados · MongoDB</span>
+                </div>
             </div>
     
-            <div class="stack-categoria reveal">
-                <h3 class="stack-categoria-titulo">Ferramentas</h3>
-                <ul class="stack-lista">
-                    <li>[ADICIONAR INFORMAÇÃO]</li>
-                </ul>
+            <div class="stack-linha">
+                <div class="stack-barra stack-barra--roxo"></div>
+                <span class="stack-rotulo">Ferramentas</span>
+                <div class="stack-pills">
+                    <span class="stack-pill stack-pill--roxo">Git · GitHub · VS Code · Docker · Postman · Linux · Figma</span>
+                </div>
             </div>
     
         </div>

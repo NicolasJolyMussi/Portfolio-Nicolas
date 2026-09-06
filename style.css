@@ -122,10 +122,11 @@ body {
 }
 
 h1 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    color: var(--primaria);
-    font-weight: bold;
-    margin: 20px;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    color: var(--claro);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
 }
 
 .cabecalho-sub-titulo {
@@ -188,6 +189,56 @@ h1 {
     background: rgba(255, 255, 255, 0.05);
 }
 
+.sobre-caixa--dividida {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+    max-width: 700px;
+}
+
+.sobre-paragrafo--texto {
+    text-align: left !important;
+    flex: 1.4;
+}
+
+.sobre-destaques {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sobre-destaque {
+    border-left: 2px solid var(--primaria);
+    padding-left: 0.75rem;
+}
+
+.sobre-destaque--roxo {
+    border-left-color: var(--secundaria);
+}
+
+.sobre-destaque-numero {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--claro);
+}
+
+.sobre-destaque-rotulo {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(226, 232, 240, 0.5);
+}
+
+@media (max-width: 600px) {
+    .sobre-caixa--dividida {
+        flex-direction: column;
+    }
+}
+
 .sobre-paragrafo {
     text-align: center;
     font-size: 1rem;
@@ -204,37 +255,82 @@ h1 {
     margin-bottom: 2.5rem;
 }
 
-.stack-grade {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
+.stack-lista-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.stack-categoria {
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--vidro);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.stack-categoria-titulo {
-    color: var(--primaria);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-}
-
-.stack-lista {
-    list-style: none;
+.stack-linha {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: var(--claro);
-    font-size: 0.95rem;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
 }
+
+.stack-barra {
+    width: 4px;
+    height: 32px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.stack-barra--indigo {
+    background: var(--primaria);
+}
+
+.stack-barra--roxo {
+    background: var(--secundaria);
+}
+
+.stack-rotulo {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(226, 232, 240, 0.5);
+    width: 90px;
+    flex-shrink: 0;
+}
+
+.stack-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.stack-pill {
+    font-size: 0.8rem;
+    color: var(--claro);
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+}
+
+.stack-pill--indigo {
+    background: rgba(79, 70, 229, 0.12);
+    border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.stack-pill--roxo {
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+@media (max-width: 600px) {
+    .stack-linha {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .stack-rotulo {
+        width: auto;
+    }
+}
+
 
 .projetos {
     padding: 6rem 2rem;
@@ -628,8 +724,6 @@ h1 {
     }
 }
 
-/* <- fecha o @media (max-width: 768px) aqui, não antes */
-
 @media (max-width: 400px) {
 
     .sobre,
@@ -718,4 +812,27 @@ h1 {
         height: 38px;
         font-size: 1rem;
     }
+}
+
+.hero-divisor {
+    width: 36px;
+    height: 2px;
+    background: var(--primaria);
+    margin: 14px auto;
+}
+
+.projetos-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.tecnologia-badge {
+    font-size: 0.7rem;
+    color: var(--claro);
+    background: rgba(79, 70, 229, 0.12);
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    padding: 3px 10px;
+    border-radius: 12px;
 }
