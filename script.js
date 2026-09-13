@@ -63,6 +63,37 @@ document.querySelectorAll('.link-projeto a.codigo').forEach(link => {
     });
 });
 
+function mostrarAlerta(texto) {
+    let alerta = document.createElement('div');
+    alerta.className = 'alerta-projeto';
+    alerta.textContent = texto;
+
+    document.body.appendChild(alerta);
+
+    setTimeout(() => alerta.classList.add('mostrar'), 10);
+
+    setTimeout(() => {
+        alerta.classList.remove('mostrar');
+        setTimeout(() => alerta.remove(), 400);
+    }, 3000);
+}
+
+const linkEmail = document.querySelector('.contato-link[href^="mailto:"]');
+
+if (linkEmail) {
+    linkEmail.addEventListener('click', e => {
+        const email = linkEmail.getAttribute('href').replace('mailto:', '');
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(email)
+                .then(() => mostrarAlerta('📋 E-mail copiado: ' + email))
+                .catch(() => mostrarAlerta('✉️ ' + email));
+        }
+        // Não usamos preventDefault: se o usuário tiver um cliente de
+        // e-mail configurado, o mailto ainda tenta abrir normalmente.
+    });
+}
+
 // Esconde o botão do menu ao rolar para baixo, mostra ao rolar para cima
 let ultimoScroll = 0;
 
